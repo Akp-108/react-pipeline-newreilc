@@ -1,0 +1,32 @@
+name: New Relic React Browser Agent Installation
+
+on:
+  #triggers
+  workflow_dispatch:
+
+jobs:
+  #job name (demo_build)
+  demo_build:
+    # on which runner our code is going to run
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run a demo script
+        run: echo ${{ secrets.MESSAGE }}
+      - name: Run a mutli-line script
+        run: |
+          echo Hi
+          echo Hello!
+          
+      - name: New Relic Agent Install in React.
+        run: echo "Hi Devops" > ./public/index.html
+        
+      - name: Upload file to repository
+        run: |
+          git config --global user.name "Raghavender-lonka"
+          git config --global user.email "raghavenderreddylonka.1h@gmail.com"
+          git add .
+          git commit -m "commit message"
+          git push
+
+
