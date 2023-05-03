@@ -20,7 +20,7 @@ jobs:
           
       - name: New Relic Agent Install in React.
         run: |
-          cat '<!DOCTYPE html>
+          echo '<!DOCTYPE html>
           <html lang="en">
             <head>
               <meta charset="utf-8" />
