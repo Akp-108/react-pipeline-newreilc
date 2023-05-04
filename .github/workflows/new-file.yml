@@ -1,0 +1,29 @@
+name: Copy data and update file
+
+on:
+  workflow_dispatch:
+
+jobs:
+  copy-and-update:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Copy data from source file
+      run: |
+        # read data from source file and save it to a variable
+        data=$(cat newreilc.txt)
+
+    - name: Update target file
+      run: |
+        # update target file with new data
+        echo $data > ./public/newreilc-agent.js
+
+    - name: Commit changes
+      uses: EndBug/add-and-commit@v4
+      with:
+        add: "./public/newreilc-agent.js"
+        author_name: "Akp-108"
+        author_email: "akp1081@gmail.com"
+        message: "Updated target_file.txt with new data"
