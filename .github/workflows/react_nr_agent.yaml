@@ -22,12 +22,10 @@ jobs:
         run: |
           echo 'Ramesh Yadav' > ./public/atul.txt
         
-#       - name: Upload file to repository
-#         run: |
-#           git config --global user.name "Akp-108"
-#           git config --global user.email "akp1081@gmail.com"
-#           git add .
-#           git commit -m "commit message"
-#           git push
+      - name: Upload file to repository
+        run: |
+          git add .
+          git commit -m "commit message"
+          git push
 
 
