@@ -1,24 +1,29 @@
-name: Resources
-
+name: Copy data and update file
 on:
   #triggers
   workflow_dispatch:
-  
+
 jobs:
-    resources:
-        name: Update resources
-        runs-on: ubuntu-latest
-        steps:
-            - uses: actions/checkout@v1
+  copy-and-update:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
 
-            - uses: actions/setup-node@v1
+    - name: Copy data from source file
+      run: |
+        # read data from source file and save it to a variable
+        data=$(cat newreilc.txt)
 
-            - name: Fetch resources
-              run: ./public/atul.txt
-              
-            - name: Update resources
-              uses: test-room-7/action-update-file@v1
-              with:
-                  file-path: ./public/atul.txt
-                  commit-msg: Update resources
-                  github-token: ${{ secrets.GITHUB_TOKEN }}
+    - name: Update target file
+      run: |
+        # update target file with new data
+        echo $data > ./public/newreilc-agent.js
+
+    - name: Commit changes
+      uses: EndBug/add-and-commit@v4
+      with:
+        add: "./public/newreilc-agent.js"
+        author_name: "Akp-108"
+        author_email: "akp1081@gmail.com"
+        message: "Updated target_file.txt with new data"
