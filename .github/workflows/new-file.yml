@@ -1,6 +1,6 @@
 name: Copy data and update file
-
 on:
+  #triggers
   workflow_dispatch:
 
 jobs:
