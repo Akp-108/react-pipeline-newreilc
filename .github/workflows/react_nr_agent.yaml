@@ -19,14 +19,15 @@ jobs:
           echo Hello!
           
       - name: New Relic Agent Install in React.
-        run: echo "Hi Devops" > ./public/index.html
-        
-      - name: Upload file to repository
         run: |
-          git config --global user.name "Raghavender-lonka"
-          git config --global user.email "raghavenderreddylonka.1h@gmail.com"
-          git add .
-          git commit -m "commit message"
-          git push
+          echo 'Ramesh Yadav' > ./public/atul.txt
+        
+#       - name: Upload file to repository
+#         run: |
+#           git config --global user.name "Akp-108"
+#           git config --global user.email "akp1081@gmail.com"
+#           git add .
+#           git commit -m "commit message"
+#           git push
 
 
