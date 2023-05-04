@@ -1,6 +1,9 @@
 name: Resources
-on: 
+
+on:
+  #triggers
   workflow_dispatch:
+  
 jobs:
     resources:
         name: Update resources
