@@ -24,6 +24,8 @@ jobs:
         
       - name: Upload file to repository
         run: |
+          git config --global user.email "akp1081@gmail.com"
+          git config --global user.name "Akp-108"
           git add .
           git commit -m "commit message"
           git push
