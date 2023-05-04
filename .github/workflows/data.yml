@@ -13,7 +13,7 @@ jobs:
     - name: Copy data from source file
       run: |
         # read data from source file and save it to a variable
-        data=$(cat newreilc.txt)
+        data=$(cat ./public/newreilc.txt)
 
     - name: Update target file
       run: |
